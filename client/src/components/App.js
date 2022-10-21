@@ -28,6 +28,7 @@ export const App = () => {
         <Route path="/signin" element={<SignIn />}/>
         <Route path="/saved" element={<SavedFavourites />}/>
         <Route path="/shippingandreturns" element={<ShippingAndReturns />}/>
+        <Route path="/individualposter" element={<IndividualPoster />}/>
       </Routes>
 
       <Footer />

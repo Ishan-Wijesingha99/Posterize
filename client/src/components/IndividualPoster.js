@@ -32,7 +32,7 @@ export const IndividualPoster = () => {
           </select>
           <br />  
 
-          <button>add to cart</button>
+          <button className="bg-green-600 px-6 py-3 mx-auto flex items-center rounded-lg hover:scale-110 duration-200 border-2 border-black text-xl">add to cart</button>
 
           <p>delivery details</p>
         </div>

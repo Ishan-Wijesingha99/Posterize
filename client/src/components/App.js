@@ -7,7 +7,7 @@ import { AboutUs } from "./AboutUs";
 import { Cart } from "./Cart";
 import { ContactUs } from "./ContactUs";
 import { IndividualPoster } from "./IndividualPoster";
-import { Login } from "./LogIn";
+import { LogIn } from "./LogIn";
 import { SignIn } from "./SignIn";
 import { SavedFavourites } from "./SavedFavourites";
 import { ShippingAndReturns } from "./ShippingAndReturns";
@@ -24,7 +24,7 @@ export const App = () => {
         <Route path="/cart" element={<Cart />}/>
         <Route path="/contactus" element={<ContactUs />}/>
         <Route path="/item" element={<IndividualPoster />}/>
-        <Route path="/login" element={<Login />}/>
+        <Route path="/login" element={<LogIn />}/>
         <Route path="/signin" element={<SignIn />}/>
         <Route path="/saved" element={<SavedFavourites />}/>
         <Route path="/shippingandreturns" element={<ShippingAndReturns />}/>

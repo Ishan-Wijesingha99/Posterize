@@ -9,8 +9,8 @@ import { ContactUs } from "./ContactUs";
 import { IndividualPoster } from "./IndividualPoster";
 import { LogIn } from "./LogIn";
 import { SignIn } from "./SignIn";
-import { SavedFavourites } from "./SavedFavourites";
 import { ShippingAndReturns } from "./ShippingAndReturns";
+import { SavedPage } from "./SavedPage";
 
 
 export const App = () => {
@@ -26,7 +26,7 @@ export const App = () => {
         <Route path="/item" element={<IndividualPoster />}/>
         <Route path="/login" element={<LogIn />}/>
         <Route path="/signin" element={<SignIn />}/>
-        <Route path="/saved" element={<SavedFavourites />}/>
+        <Route path="/saved" element={<SavedPage />}/>
         <Route path="/shippingandreturns" element={<ShippingAndReturns />}/>
         <Route path="/individualposter" element={<IndividualPoster />}/>
       </Routes>

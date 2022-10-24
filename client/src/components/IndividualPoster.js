@@ -1,29 +1,28 @@
 import React from "react";
-import posterPic from '../images/posters/art and nature/artandnature1.jpg'
+import singlePoster from '../images/posters/art and nature/artandnature1.jpg'
 
 
 export const IndividualPoster = () => {
   return (
     <div className="min-h-screen my-24">
       <div className="flex flex-row items-center justify-center">
-        <div>
-          <img
-          src={posterPic}
-          alt=""
-          className="w-[300px] mr-8"
-          />
-        </div>
+        <img
+        src={singlePoster}
+        alt=""
+        className="w-[300px] mr-8 border-2 border-black rounded-lg"
+        />
 
-        <div className="bg-gray-600 py-8 px-8 border-2 border-black rounded-lg text-gray-300 ml-8">
+        <div className="bg-gray-600 py-8 px-8 border-2 border-black rounded-lg text-gray-300 ml-8 max-w-[400px]">
           <p className="font-silkscreen text-2xl mb-6">Poster Name</p>
           
           <p className="text-2xl mb-6">$A39.99</p>
           
-          <label htmlFor="sizeOptions">Size</label>
+          <label htmlFor="sizeOptions" className="text-2xl">Size</label>
           <br />
           <select 
             id="sizeOptions"
             name="sizeOptions"
+            className="p-2 border-2 border-black rounded-lg text-black mt-6 mb-6 w-full"
           >
             <option value="">-- Choose --</option>
             <option value="small">Small</option>
@@ -32,9 +31,10 @@ export const IndividualPoster = () => {
           </select>
           <br />  
 
-          <button className="bg-green-600 px-6 py-3 mx-auto flex items-center rounded-lg hover:scale-110 duration-200 border-2 border-black text-xl">add to cart</button>
+          <button className="bg-green-600 px-6 py-3 mx-auto rounded-lg hover:scale-105 duration-200 border-2 border-black text-xl w-full text-center mb-6 text-black">Add to Cart</button>
 
-          <p>delivery details</p>
+          <p className="text-2xl mb-3">Poster Details</p>
+          <p className="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias nihil sunt explicabo modi enim similique accusantium iusto possimus deserunt adipisci.</p>
         </div>
       </div>
 

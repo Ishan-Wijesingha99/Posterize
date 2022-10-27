@@ -9,6 +9,16 @@ const PORT = process.env.PORT || 3001
 
 
 
+const { 
+  authRoutes,
+  cartRoutes,
+  orderRoutes,
+  productRoutes,
+  userRoutes
+} = require('./routes')
+
+
+
 app.use(express.json())
 
 

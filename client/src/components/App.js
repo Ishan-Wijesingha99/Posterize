@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Navbar } from "./Navbar";
 import { Route, Routes, Link } from "react-router-dom"
 import { Footer } from "./Footer";
@@ -14,9 +14,13 @@ import { SignUp } from "./SignUp";
 
 
 export const App = () => {
+  const [loggedIn, setLoggedIn] = useState(false)
+  
+
+
   return (
     <div>
-      <Navbar />
+      <Navbar loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>
 
       <Routes>
         <Route path="/" element={<Homepage />}/>
@@ -24,11 +28,11 @@ export const App = () => {
         <Route path="/cart" element={<Cart />}/>
         <Route path="/contactus" element={<ContactUs />}/>
         <Route path="/item" element={<IndividualPoster />}/>
-        <Route path="/login" element={<LogIn />}/>
-        <Route path="/signup" element={<SignUp />}/>
         <Route path="/saved" element={<SavedPage />}/>
         <Route path="/shippingandreturns" element={<ShippingAndReturns />}/>
         <Route path="/individualposter" element={<IndividualPoster />}/>
+        <Route path="/login" element={<LogIn loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}/>
+        <Route path="/signup" element={<SignUp loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}/>
       </Routes>
 
       <Footer />

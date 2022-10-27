@@ -8,9 +8,9 @@ import { Cart } from "./Cart";
 import { ContactUs } from "./ContactUs";
 import { IndividualPoster } from "./IndividualPoster";
 import { LogIn } from "./LogIn";
-import { SignIn } from "./SignIn";
 import { ShippingAndReturns } from "./ShippingAndReturns";
 import { SavedPage } from "./SavedPage";
+import { SignUp } from "./SignUp";
 
 
 export const App = () => {
@@ -25,7 +25,7 @@ export const App = () => {
         <Route path="/contactus" element={<ContactUs />}/>
         <Route path="/item" element={<IndividualPoster />}/>
         <Route path="/login" element={<LogIn />}/>
-        <Route path="/signin" element={<SignIn />}/>
+        <Route path="/signup" element={<SignUp />}/>
         <Route path="/saved" element={<SavedPage />}/>
         <Route path="/shippingandreturns" element={<ShippingAndReturns />}/>
         <Route path="/individualposter" element={<IndividualPoster />}/>

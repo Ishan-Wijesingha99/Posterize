@@ -2,7 +2,7 @@ import React from "react";
 
 
 
-export const SignIn = () => {
+export const SignUp = () => {
   return (
     <div className="min-h-screen mt-32">
       <div className="flex flex-col justify-center items-center py-12 bg-gray-600 w-3/4 mx-auto border-2 border-black rounded-lg">

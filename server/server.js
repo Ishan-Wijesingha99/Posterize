@@ -27,6 +27,10 @@ const PORT = process.env.PORT || 4000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/build')));
+}
+
 // create apollo server with typeDefs, resolvers and authMiddleware context 
 const server = new ApolloServer({ typeDefs, resolvers, context: authMiddleware })
 

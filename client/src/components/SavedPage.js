@@ -22,19 +22,6 @@ export const SavedPage = () => {
             <p className="font-silkscreen text-xl mb-6">Poster Name</p>
 
             <p className="text-2xl mb-6">Price: A$39.99</p>
-            
-            <label htmlFor="sizeOptions" className="text-2xl">Size</label>
-            <br />
-            <select 
-              id="sizeOptions"
-              name="sizeOptions"
-              className="p-2 border-2 border-black rounded-lg text-black mt-2 mb-6 w-full"
-            >
-              <option value="">-- Choose --</option>
-              <option value="small">Small</option>
-              <option value="medium">Medium</option>
-              <option value="large">Large</option>
-            </select>
 
             <button className="bg-green-600 px-6 py-3 mx-auto flex items-center rounded-lg hover:scale-105 duration-200 border-2 border-black text-xl w-full">Add to Cart</button>
 
@@ -54,20 +41,6 @@ export const SavedPage = () => {
             <p className="font-silkscreen text-xl mb-6">Poster Name</p>
 
             <p className="text-2xl mb-6">Price: A$39.99</p>
-
-            
-            <label htmlFor="sizeOptions" className="text-2xl">Size</label>
-            <br />
-            <select 
-              id="sizeOptions"
-              name="sizeOptions"
-              className="p-2 border-2 border-black rounded-lg text-black mt-2 mb-6 w-full"
-            >
-              <option value="">-- Choose --</option>
-              <option value="small">Small</option>
-              <option value="medium">Medium</option>
-              <option value="large">Large</option>
-            </select>
 
             <button className="bg-green-600 px-6 py-3 mx-auto flex items-center rounded-lg hover:scale-105 duration-200 border-2 border-black text-xl w-full">Add to Cart</button>
 

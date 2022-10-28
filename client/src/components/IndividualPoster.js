@@ -17,20 +17,6 @@ export const IndividualPoster = () => {
           
           <p className="text-2xl mb-6">$A39.99</p>
           
-          <label htmlFor="sizeOptions" className="text-2xl">Size</label>
-          <br />
-          <select 
-            id="sizeOptions"
-            name="sizeOptions"
-            className="p-2 border-2 border-black rounded-lg text-black mt-6 mb-6 w-full"
-          >
-            <option value="">-- Choose --</option>
-            <option value="small">Small</option>
-            <option value="medium">Medium</option>
-            <option value="large">Large</option>
-          </select>
-          <br />  
-
           <button className="bg-green-600 px-6 py-3 mx-auto rounded-lg hover:scale-105 duration-200 border-2 border-black text-xl w-full text-center mb-6 text-black">Add to Cart</button>
 
           <p className="text-2xl mb-3">Poster Details</p>

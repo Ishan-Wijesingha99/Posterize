@@ -3,6 +3,9 @@ import cartIcon from '../images/icons/cartIcon.png'
 import userIcon from '../images/icons/userIcon.png'
 import bookmarkIcon from '../images/icons/bookmarkIcon.png'
 
+import { Link } from "react-router-dom"
+
+
 
 export const Navbar = ({loggedIn, setLoggedIn}) => {
   const [userDropdown, setUserDropdown] = useState(false)
@@ -15,30 +18,30 @@ export const Navbar = ({loggedIn, setLoggedIn}) => {
   return (
     <div>
       <div className="flex flex-row items-center justify-between py-6 px-4 bg-green-600 shadow-lg shadow-gray-400 border-b-2 border-black">
-        <a href="/">
+        <Link to="/">
           <h2
           className="text-4xl font-silkscreen font-extrabold cursor-pointer"
           >
             POSTERISE
           </h2>
-        </a>
+        </Link>
 
         <div className="flex flex-row items-center justify-between">
-          <a href="/saved">
+          <Link to='/saved'>
             <img
             src={bookmarkIcon}
             alt=""
             className="w-[30px] h-[30px] ml-2 mr-1 cursor-pointer transition ease-out hover:scale-125 duration-200"
             />
-          </a>
+          </Link>
           
-          <a href="/cart">
+          <Link to="/cart">
             <img
             src={cartIcon}
             alt=""
             className="w-[35px] h-[30px] mx-2 cursor-pointer transition ease-out hover:scale-125 duration-200"
             />
-          </a>
+          </Link>
 
           <img
           src={userIcon}
@@ -54,29 +57,29 @@ export const Navbar = ({loggedIn, setLoggedIn}) => {
 
           {loggedIn ? (
 
-            <a
+            <Link
             className="cursor-pointer font-silkscreen font-extrabold"
-            href="/"
+            to="/"
             >
               Logout
-            </a>
+            </Link>
 
           ) : (
 
             <div className="flex flex-col">
-              <a
+              <Link
               className="cursor-pointer font-silkscreen font-extrabold mb-4"
-              href="/signup"
+              to="/signup"
               >
                 Sign Up
-              </a>
+              </Link>
 
-              <a
+              <Link
               className="cursor-pointer font-silkscreen font-extrabold"
-              href="/login"
+              to="/login"
               >
                 Log In
-              </a>
+              </Link>
             </div>
 
           )}

@@ -3,7 +3,7 @@ import twitterIcon from '../images/icons/twitterIcon.png'
 import facebookIcon from '../images/icons/facebookIcon.png'
 import instagramIcon from '../images/icons/instagramIcon.png'
 
-
+import { Link } from "react-router-dom"
 
 export const Footer = () => {
   return (
@@ -36,26 +36,27 @@ export const Footer = () => {
       </div>
 
       <div className="flex flex-col items-center justify-center justify-between h-[130px]">
-        <a
+
+        <Link
+        to='/aboutus'
         className="p-2 cursor-pointer transition ease-out hover:scale-110 font-silkscreen font-extrabold duration-200"
-        href="/aboutus"
         >
           About Us
-        </a>
+        </Link>
 
-        <a
+        <Link
+        to='/contactus'
         className="p-2 cursor-pointer transition ease-out hover:scale-110 font-silkscreen font-extrabold duration-200"
-        href="/contactus"
         >
           Contact Us
-        </a>
+        </Link>
 
-        <a
+        <Link
+        to='/shippingandreturns'
         className="p-2 cursor-pointer transition ease-out hover:scale-110 font-silkscreen font-extrabold duration-200"
-        href="shippingandreturns"
         >
           Shipping and Returns
-        </a>
+        </Link>
       </div>
     </div>
   )

@@ -9,26 +9,26 @@ const typeDefs = require('./schemas/typeDefs')
 const { authMiddleware } = require('./utils/auth')
 
 // import express
-const express = require('express');
+const express = require('express')
 
 // import built-in path module
-const path = require('path');
+const path = require('path')
 
 // import mongoose/mongoDB connection
-const db = require('./config/connection');
+const db = require('./config/connection')
 
 // create express app
-const app = express();
+const app = express()
 
 // create variable to store port, if application is running on local device, it will be 3001, if it is running on heroku, it will be process.env.PORT
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 4000
 
 // express middleware
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/build')));
+  app.use(express.static(path.join(__dirname, '../client/build')))
 }
 
 app.get('*', (req, res) => {

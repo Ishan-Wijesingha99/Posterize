@@ -26,20 +26,6 @@ export const Cart = () => {
             <label htmlFor="quantity" className="text-2xl">Quantity</label>
             <br />
             <input type="number" id="quantity" name="quantity" min="1" placeholder="Quantity" className="p-2 border-2 border-black rounded-lg text-black mt-2 mb-6 w-full"/>
-            <br />
-            
-            <label htmlFor="sizeOptions" className="text-2xl">Size</label>
-            <br />
-            <select 
-              id="sizeOptions"
-              name="sizeOptions"
-              className="p-2 border-2 border-black rounded-lg text-black mt-2 mb-6 w-full"
-            >
-              <option value="">-- Choose --</option>
-              <option value="small">Small</option>
-              <option value="medium">Medium</option>
-              <option value="large">Large</option>
-            </select>
 
           </div>
         </div>
@@ -60,20 +46,6 @@ export const Cart = () => {
             <label htmlFor="quantity" className="text-2xl">Quantity</label>
             <br />
             <input type="number" id="quantity" name="quantity" min="1" placeholder="Quantity" className="p-2 border-2 border-black rounded-lg text-black mt-2 mb-6 w-full"/>
-            <br />
-            
-            <label htmlFor="sizeOptions" className="text-2xl">Size</label>
-            <br />
-            <select 
-              id="sizeOptions"
-              name="sizeOptions"
-              className="p-2 border-2 border-black rounded-lg text-black mt-2 mb-6 w-full"
-            >
-              <option value="">-- Choose --</option>
-              <option value="small">Small</option>
-              <option value="medium">Medium</option>
-              <option value="large">Large</option>
-            </select>
 
           </div>
         </div>

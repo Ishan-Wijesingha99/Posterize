@@ -3,8 +3,6 @@ import React, { useState } from "react";
 import { useMutation } from '@apollo/client'
 import { ADD_USER } from '../graphql/mutations'
 
-import { User } from '../../../server/models/User'
-
 
 export const SignUp = ({loggedIn, setLoggedIn}) => {
   const [formData, setFormData] = useState({

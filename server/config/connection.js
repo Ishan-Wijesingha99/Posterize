@@ -1,6 +1,8 @@
 const mongoose = require('mongoose')
 require('dotenv').config()
 
+
+
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -9,5 +11,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 })
 .then(() => console.log('MongoDB Atlas connection to Posterize database successful'))
 .catch(err => console.log(err))
+
+
 
 module.exports = mongoose.connection

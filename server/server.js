@@ -1,36 +1,37 @@
-const express = require('express')
-const mongoose = require('mongoose')
-require('dotenv').config()
+// need to import this for apollo-server-express
+const { ApolloServer } = require('apollo-server-express')
 
+// need to import typeDefs and resolvers
+const resolvers = require('./schemas/resolvers')
+const typeDefs = require('./schemas/typeDefs')
 
+// import authMiddleware function/context
+const { authMiddleware } = require('./utils/auth')
 
-const app = express()
-const PORT = process.env.PORT || 4000
+// import express
+const express = require('express');
 
+// import built-in path module
+const path = require('path');
 
+// import mongoose/mongoDB connection
+const db = require('./config/connection');
 
-const { 
-  authRoutes,
-  cartRoutes,
-  orderRoutes,
-  productRoutes,
-  userRoutes
-} = require('./routes')
+// create express app
+const app = express();
 
+// create variable to store port, if application is running on local device, it will be 3001, if it is running on heroku, it will be process.env.PORT
+const PORT = process.env.PORT || 4000;
 
+// express middleware
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
+// create apollo server with typeDefs, resolvers and authMiddleware context 
+const server = new ApolloServer({ typeDefs, resolvers, context: authMiddleware })
 
-app.use(express.json())
-app.use(express.urlencoded({extended: false}))
-app.use('/api/auth', authRoutes)
+// apply the apollo middleware
+server.applyMiddleware({ app })
 
-
-mongoose.connect(process.env.MONGO_URL)
-.then(() => console.log('MongoDB Atlas connection to Posterize database successful'))
-.catch(err => console.log(err))
-
-
-
-app.listen(PORT, () => console.log(`Server listening on port ${PORT}...`))
-
-
+// once the mongoose/mongoDB connection is made, listen on the port and log message to console
+db.once('open', () => app.listen(PORT, () => console.log(`🌍 Now listening on localhost:${PORT}`)))

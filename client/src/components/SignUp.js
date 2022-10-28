@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 
+import { useMutation } from '@apollo/client'
+import { ADD_USER } from '../graphql/mutations'
+
+import { User } from '../../../server/models/User'
 
 
 export const SignUp = ({loggedIn, setLoggedIn}) => {
@@ -18,14 +22,39 @@ export const SignUp = ({loggedIn, setLoggedIn}) => {
     })
   }
 
-  console.log(formData)
 
-  const handleFormSubmit = event => {
+
+  const [addUser] = useMutation(ADD_USER)
+
+
+
+  const handleFormSubmit = async event => {
     event.preventDefault()
 
-    console.log('hey homie')
+    console.log('yo')
 
-    // once the user is logged in, change loggedIn to true, and the page will automatically be changed
+    try {
+      addUser({
+        variables: {
+          input: {
+            username: formData.username,
+            email: formData.email,
+            password: formData.password
+          }
+        } 
+      })
+     
+
+      // if(!data) throw new Error('Something went wrong!')
+
+      // // save user token to local storage
+      // localStorage.setItem('id_token', data.addUser.token)
+
+      // once the user is logged in, change loggedIn to true, and the page will automatically be changed
+      setLoggedIn(true)
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   return (
@@ -67,7 +96,7 @@ export const SignUp = ({loggedIn, setLoggedIn}) => {
             />
 
             <input
-            type="text"
+            type="password"
             name="password"
             placeholder="Enter password"
             className="p-2 border-2 border-black rounded-lg focus:outline-none mb-8 bg-gray-300 placeholder:text-black"

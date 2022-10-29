@@ -4,10 +4,12 @@ const { authMiddleware } = require('./utils/auth')
 const typeDefs = require('./schemas/typeDefs')
 const resolvers = require('./schemas/resolvers')
 
+const { authRoutes } = require('./routes/')
 
 const express = require('express')
 const path = require('path')
 const db = require('./config/connection')
+const cors = require('cors')
 
 
 
@@ -18,6 +20,16 @@ const PORT = process.env.PORT || 4000
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
+app.use(cors())
+app.use('/api', authRoutes)
+
+
+
+
+
+
+
+
 
 
 

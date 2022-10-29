@@ -69,9 +69,9 @@ export const Navbar = ({loggedIn, setLoggedIn}) => {
             <div className="flex flex-col">
               <Link
               className="cursor-pointer font-silkscreen font-extrabold mb-4"
-              to="/signup"
+              to="/createuser"
               >
-                Sign Up
+                Create User
               </Link>
 
               <Link

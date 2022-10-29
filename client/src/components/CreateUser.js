@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-
-import { useMutation } from '@apollo/client'
-import { ADD_USER } from '../graphql/mutations'
+import { Link } from 'react-router-dom'
 
 
-export const SignUp = ({loggedIn, setLoggedIn}) => {
+
+export const CreateUser = () => {
+  const [userCreated, setUserCreated] = useState(false)
+  const [errorMessage, setErrorMessage] = useState(false)
+  
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -20,57 +22,55 @@ export const SignUp = ({loggedIn, setLoggedIn}) => {
     })
   }
 
-
-
-  const [addUser] = useMutation(ADD_USER)
-
-
-
   const handleFormSubmit = async event => {
     event.preventDefault()
 
-    console.log('yo')
+    const url = 'http://localhost:4000/api/createuser'
 
     try {
-      addUser({
-        variables: {
-          input: {
-            username: formData.username,
-            email: formData.email,
-            password: formData.password
-          }
-        } 
+      // sending information from the frontend to the backend is as simple as using fetch, even if the ports are different for frontend and backend, but if the ports are different, you need to use cors() as middleware in backend server.js
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData
+        })
       })
-     
 
-      // if(!data) throw new Error('Something went wrong!')
+      const data = await response.json()
 
-      // // save user token to local storage
-      // localStorage.setItem('id_token', data.addUser.token)
+      if(data.username && data.email && data.password) {
+        setErrorMessage(false)
+        setUserCreated(true)
+      } else {
+        setErrorMessage(true)
+      }
 
-      // once the user is logged in, change loggedIn to true, and the page will automatically be changed
-      setLoggedIn(true)
     } catch (error) {
       console.log(error)
     }
   }
 
+
+
   return (
     <div className="min-h-screen mt-32">
 
-      {loggedIn ? (
+      {userCreated ? (
 
         <div className="flex flex-col items-center justify-center mx-auto">
-          <h2 className="text-4xl font-silkscreen font-extrabold text-center mb-12">You are are logged in</h2>
+          <h2 className="text-4xl font-silkscreen font-extrabold text-center mb-12">User has been created, click below to go to login page</h2>
 
-          <a href="/" className="bg-green-600 px-6 py-3 mx-auto flex items-center rounded-lg hover:scale-105 duration-200 border-2 border-black text-xl">
-            Home Page
-          </a>
+          <Link to="/login" className="bg-green-600 px-6 py-3 mx-auto flex items-center rounded-lg hover:scale-105 duration-200 border-2 border-black text-xl">
+            Login Page
+          </Link>
         </div>
 
       ) : (
 
-        <div className="flex flex-col justify-center items-center py-12 bg-gray-600 w-3/4 mx-auto border-2 border-black rounded-lg">
+        <div className="flex flex-col justify-center items-center py-12 bg-gray-600 w-3/4 mx-auto border-2 border-black rounded-lg mb-16">
           <p className="text-2xl mb-8 text-gray-300 font-silkscreen">Enter details to create a user...</p>
 
           <form 
@@ -100,6 +100,14 @@ export const SignUp = ({loggedIn, setLoggedIn}) => {
             className="p-2 border-2 border-black rounded-lg focus:outline-none mb-8 bg-gray-300 placeholder:text-black"
             onChange={handleInputChange}
             />
+
+            {errorMessage && (
+              <p
+              className="p-4 border-2 border-black focus:outline-none mb-8 bg-red-500 text-center font-silkscreen font-extrabold"
+              >
+                Error: User Not Created
+              </p>
+            )}
 
             <button
             className="bg-green-600 px-6 py-3 mx-auto flex items-center rounded-lg hover:scale-110 duration-200 border-2 border-black text-xl"

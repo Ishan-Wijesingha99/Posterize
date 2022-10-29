@@ -11,7 +11,7 @@ import { IndividualPoster } from "./IndividualPoster";
 import { LogIn } from "./LogIn";
 import { ShippingAndReturns } from "./ShippingAndReturns";
 import { SavedPage } from "./SavedPage";
-import { SignUp } from "./SignUp";
+import { CreateUser } from "./CreateUser";
 
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
@@ -59,8 +59,8 @@ export const App = () => {
           <Route path="/saved" element={<SavedPage />}/>
           <Route path="/shippingandreturns" element={<ShippingAndReturns />}/>
           <Route path="/individualposter" element={<IndividualPoster />}/>
-          <Route path="/login" element={<LogIn loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}/>
-          <Route path="/signup" element={<SignUp loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}/>
+          <Route path="/login" element={<LogIn />}/>
+          <Route path="/createuser" element={<CreateUser/>}/>
         </Routes>
 
         <Footer />

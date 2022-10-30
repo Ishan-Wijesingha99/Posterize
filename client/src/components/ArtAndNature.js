@@ -171,7 +171,7 @@ export const ArtAndNature = () => {
           />
 
           <div className="bg-gray-600 py-8 px-8 border-2 border-black rounded-lg text-gray-300 ml-8 max-w-[400px]">
-            <p className="text-2xl mb-6">$A {posterElementObject.price}</p>
+            <p className="text-2xl mb-6">$ {posterElementObject.price}</p>
             
             <button className="bg-green-600 px-6 py-3 mx-auto rounded-lg hover:scale-105 duration-200 border-2 border-black text-xl w-full text-center mb-6 text-black">Add to Cart</button>
           </div>

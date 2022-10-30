@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 
 import anime1 from '../images/posters/anime/anime1.jpg'
 import anime2 from '../images/posters/anime/anime2.jpg'
@@ -24,40 +24,173 @@ import anime21 from '../images/posters/anime/anime21.jpg'
 
 
 
-const arrayOfImages = [anime1, anime2, anime3, anime4, anime5, anime6, anime7, anime8, anime9, anime10, anime11, anime12, anime13, anime14, anime15, anime16, anime17, anime18, anime19, anime20, anime21]
-
-const arrayOfJSX = arrayOfImages.map((imageString, i) => {
-  return (
-    <div className="flex flex-col items-center justify-center" key={i+1}>
-      <img
-      src={imageString}
-      alt={`anime poster - ${i + 1}`}
-      className="border-black border-2 shadow-lg shadow-gray-800 transition ease-out hover:scale-105 duration-200 cursor-pointer"
-      />
-    </div>
-  )
-})
+const arrayOfImages = [
+  {
+    imgString: anime1,
+    price: '49.99'
+  }, 
+  {
+    imgString: anime2,
+    price: '49.99'
+  }, 
+  {
+    imgString: anime3,
+    price: '39.99'
+  }, 
+  {
+    imgString: anime4,
+    price: '49.99'
+  }, 
+  {
+    imgString: anime5,
+    price: '49.99'
+  }, 
+  {
+    imgString: anime6,
+    price: '39.99'
+  }, 
+  {
+    imgString: anime7,
+    price: '39.99'
+  }, 
+  {
+    imgString: anime8,
+    price: '39.99'
+  }, 
+  {
+    imgString: anime9,
+    price: '49.99'
+  }, 
+  {
+    imgString: anime10,
+    price: '49.99'
+  },
+  {
+    imgString: anime11,
+    price: '49.99'
+  },
+  {
+    imgString: anime12,
+    price: '39.99'
+  },
+  {
+    imgString: anime13,
+    price: '39.99'
+  },
+  {
+    imgString: anime14,
+    price: '39.99'
+  },
+  {
+    imgString: anime15,
+    price: '49.99'
+  },
+  {
+    imgString: anime16,
+    price: '49.99'
+  },
+  {
+    imgString: anime17,
+    price: '39.99'
+  },
+  {
+    imgString: anime18,
+    price: '39.99'
+  },
+  {
+    imgString: anime19,
+    price: '49.99'
+  },
+  {
+    imgString: anime20,
+    price: '49.99'
+  },
+  {
+    imgString: anime21,
+    price: '49.99'
+  }
+]
 
 
 
 export const Anime = () => {
+  const [singlePoster, setSinglePoster] = useState(false)
+  const [posterElementObject, setPosterElementObject] = useState({
+    price: '',
+    src: ''
+  })
+
+  const posterClickEvent = (event) => {
+  
+    const idString = event.target.id
+
+    const index = idString.split('-')[2]
+
+    setPosterElementObject({
+      price: arrayOfImages[index].price,
+      src: arrayOfImages[index].imgString
+    })
+  
+    // set page to render a single poster
+    setSinglePoster(true)
+
+    window.scrollTo(0, 0)
+  }
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
+  const arrayOfJSX = arrayOfImages.map((object, i) => {
+    return (
+      <div className="flex flex-col items-center justify-center" key={i+1}>
+        <img
+        src={object.imgString}
+        alt={`anime poster - ${i + 1}`}
+        className="border-black border-2 shadow-lg shadow-gray-800 transition ease-out hover:scale-105 duration-200 cursor-pointer"
+        id={`anime-poster-${i}`}
+        onClick={posterClickEvent}
+        />
+      </div>
+    )
+  })
+
+
+
   return (
     <div className="min-h-screen mb-24">
       
-      <div className="flex flex-col items-center justify-center h-[400px] bg-gray-600 border-b-2 border-black">
-        <h2 className="font-silkscreen font-extrabold text-6xl">ANIME</h2>
-      </div>
+      {
+      singlePoster ? (
 
-      <div className="grid grid-cols-3 gap-12 justify-items-center mx-8 my-16">
+        <div className="flex flex-row items-center justify-center mt-32">
+          <img
+          src={posterElementObject.src}
+          alt="single poster image"
+          className="w-[300px] mr-8 border-2 border-black shadow-lg shadow-gray-800"
+          />
 
-        {arrayOfJSX}
-        
-      </div>
+          <div className="bg-gray-600 py-8 px-8 border-2 border-black rounded-lg text-gray-300 ml-8 max-w-[400px]">
+            <p className="text-2xl mb-6">$ {posterElementObject.price}</p>
+            
+            <button className="bg-green-600 px-6 py-3 mx-auto rounded-lg hover:scale-105 duration-200 border-2 border-black text-xl w-full text-center mb-6 text-black">Add to Cart</button>
+          </div>
+        </div>
+
+      ) : (
+
+        <div>
+          <div className="flex flex-col items-center justify-center h-[400px] bg-gray-600 border-b-2 border-black">
+            <h2 className="font-silkscreen font-extrabold text-6xl">ANIME</h2>
+          </div>
+
+          <div className="grid grid-cols-3 gap-12 justify-items-center mx-8 my-16">
+            {arrayOfJSX}
+          </div>
+        </div>
+
+      )
+      }
 
     </div>
   )

@@ -24,7 +24,6 @@ import motivational21 from '../images/posters/motivational/motivational21.jpg'
 
 
 
-
 const arrayOfImages = [
   {
     imgString: motivational1,

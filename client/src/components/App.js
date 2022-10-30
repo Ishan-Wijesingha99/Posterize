@@ -15,6 +15,12 @@ import { CreateUser } from "./CreateUser";
 
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
+import { Sport } from "./Sport";
+import { ArtAndNature } from "./ArtAndNature";
+import { Motivational } from "./Motivational";
+import { Anime } from "./Anime";
+import { Animals } from "./Animals";
+import { Movies } from "./Movies";
 
 
 
@@ -60,6 +66,13 @@ export const App = () => {
           <Route path="/individualposter" element={<IndividualPoster loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}/>
           <Route path="/login" element={<LogIn loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}/>
           <Route path="/createuser" element={<CreateUser/>}/>
+          
+          <Route path="/sport" element={<Sport />}/>
+          <Route path="/artandnature" element={<ArtAndNature />}/>
+          <Route path="/motivational" element={<Motivational />}/>
+          <Route path="/movies" element={<Movies />}/>
+          <Route path="/anime" element={<Anime />}/>
+          <Route path="/animals" element={<Animals />}/>
         </Routes>
 
         <Footer />

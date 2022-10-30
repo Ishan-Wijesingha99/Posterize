@@ -1,8 +1,13 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 
 
 export const ShippingAndReturns = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <div className="min-h-screen my-24">
       <div className="flex flex-col items-center justify-center py-8 pb-4 pt-8 bg-gray-600 w-3/4 mx-auto border-2 border-black rounded-lg">

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import singlePoster from '../images/posters/art and nature/artandnature1.jpg'
+import singlePoster from '../images/posters/artAndNature/artandnature1.jpg'
 
 import { authenticateToken } from '../utils/AuthenticateToken'
 

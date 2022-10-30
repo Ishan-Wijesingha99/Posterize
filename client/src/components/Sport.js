@@ -20,14 +20,25 @@ import sport17 from '../images/posters/sport/sport17.jpg'
 import sport18 from '../images/posters/sport/sport18.jpg'
 import sport19 from '../images/posters/sport/sport19.jpg'
 import sport20 from '../images/posters/sport/sport20.jpg'
+import sport21 from '../images/posters/sport/sport21.jpg'
 
 
 
-let arrayOfImages = []
 
-for(let i = 0; i <= 20; i++) {
+const arrayOfImages = [sport1, sport2, sport3, sport4, sport5, sport6, sport7, sport8, sport9, sport10, sport11, sport12, sport13, sport14, sport15, sport16, sport17, sport18, sport19, sport20, sport21]
 
-}
+const arrayOfJSX = arrayOfImages.map((imageString, i) => {
+  return (
+    <div className="flex flex-col items-center justify-center" key={i+1}>
+      <img
+      src={imageString}
+      alt={`sport poster - ${i + 1}`}
+      className="border-black border-2 shadow-lg shadow-gray-800 transition ease-out hover:scale-105 duration-200 cursor-pointer"
+      />
+    </div>
+  )
+})
+
 
 
 export const Sport = () => {
@@ -38,45 +49,17 @@ export const Sport = () => {
 
   return (
     <div className="min-h-screen mb-24">
+      
       <div className="flex flex-col items-center justify-center h-[400px] bg-gray-600 border-b-2 border-black">
         <h2 className="font-silkscreen font-extrabold text-6xl">SPORT</h2>
       </div>
 
       <div className="grid grid-cols-3 gap-12 justify-items-center mx-8 my-16">
-        <div className="flex flex-col items-center justify-center">
-          <img
-          src={sport1}
-          alt=""
-          className="border-black border-2 shadow-lg shadow-gray-800 transition ease-out hover:scale-105 duration-200"
-          />
-        </div>
-       
 
-        <div className="flex flex-col items-center justify-center">
-          <img
-          src={sport2}
-          alt=""
-          className="border-black border-2 shadow-lg shadow-gray-800 transition ease-out hover:scale-105 duration-200"
-          />
-        </div>
-
-        <div className="flex flex-col items-center justify-center">
-          <img
-          src={sport3}
-          alt=""
-          className="border-black border-2 shadow-lg shadow-gray-800 transition ease-out hover:scale-105 duration-200"
-          />
-        </div>
-
-        <div className="flex flex-col items-center justify-center">
-          <img
-          src={sport4}
-          alt=""
-          className="border-black border-2 shadow-lg shadow-gray-800 transition ease-out hover:scale-105 duration-200"
-          />
-        </div>
+        {arrayOfJSX}
         
       </div>
+
     </div>
   )
 }

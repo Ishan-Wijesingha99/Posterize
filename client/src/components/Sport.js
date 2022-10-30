@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useEffect} from "react";
+
 import sport1 from '../images/posters/sport/sport1.png'
 import sport2 from '../images/posters/sport/sport2.jpg'
 import sport3 from '../images/posters/sport/sport3.jpg'
@@ -30,6 +31,11 @@ for(let i = 0; i <= 20; i++) {
 
 
 export const Sport = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <div className="min-h-screen mb-24">
       <div className="flex flex-col items-center justify-center h-[400px] bg-gray-600 border-b-2 border-black">

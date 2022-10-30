@@ -11,6 +11,8 @@ export const Cart = ({loggedIn, setLoggedIn}) => {
     const trueOrFalse = authenticateToken()
 
     setLoggedIn(trueOrFalse)
+
+    window.scrollTo(0, 0)
     
   }, [])
 

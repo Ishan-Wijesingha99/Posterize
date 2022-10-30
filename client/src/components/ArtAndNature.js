@@ -1,7 +1,12 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 
 export const ArtAndNature = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <div className="min-h-screen mb-24">
       <div className="flex flex-col items-center justify-center h-[400px] bg-gray-600 border-b-2 border-black">

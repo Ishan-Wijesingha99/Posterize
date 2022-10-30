@@ -6,6 +6,7 @@ import instagramIcon from '../images/icons/instagramIcon.png'
 import { Link } from "react-router-dom"
 
 export const Footer = () => {
+
   return (
     <div className="flex flex-row items-center justify-around py-6 px-4 bg-green-600 border-t-2 border-black">
 

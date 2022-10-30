@@ -1,14 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import cartIcon from '../images/icons/cartIcon.png'
 import userIcon from '../images/icons/userIcon.png'
 import bookmarkIcon from '../images/icons/bookmarkIcon.png'
 
 import { Link } from "react-router-dom"
 
+import { authenticateToken } from '../utils/AuthenticateToken'
+
 
 
 export const Navbar = ({loggedIn, setLoggedIn}) => {
   const [userDropdown, setUserDropdown] = useState(false)
+
+  useEffect(() => {
+
+    const trueOrFalse = authenticateToken()
+
+    setLoggedIn(trueOrFalse)
+    
+  }, [])
 
   const clickUser = () => {
     setUserDropdown(prev => !prev)
@@ -57,12 +67,18 @@ export const Navbar = ({loggedIn, setLoggedIn}) => {
 
           {loggedIn ? (
 
-            <Link
+            <p
             className="cursor-pointer font-silkscreen font-extrabold"
-            to="/"
+            onClick={() => {
+              // when user clicks logout, remove the token from localStorage
+              window.localStorage.removeItem('token')
+
+              // take user to home page
+              window.location.href = '/'
+            }}
             >
               Logout
-            </Link>
+            </p>
 
           ) : (
 

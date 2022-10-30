@@ -51,15 +51,14 @@ export const App = () => {
         <Navbar loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>
 
         <Routes>
-          <Route path="/" element={<Homepage />}/>
+          <Route path="/" element={<Homepage loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}/>
           <Route path="/aboutus" element={<AboutUs />}/>
-          <Route path="/cart" element={<Cart />}/>
+          <Route path="/cart" element={<Cart loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}/>
           <Route path="/contactus" element={<ContactUs />}/>
-          <Route path="/item" element={<IndividualPoster />}/>
-          <Route path="/saved" element={<SavedPage />}/>
+          <Route path="/saved" element={<SavedPage loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}/>
           <Route path="/shippingandreturns" element={<ShippingAndReturns />}/>
-          <Route path="/individualposter" element={<IndividualPoster />}/>
-          <Route path="/login" element={<LogIn />}/>
+          <Route path="/individualposter" element={<IndividualPoster loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}/>
+          <Route path="/login" element={<LogIn loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}/>
           <Route path="/createuser" element={<CreateUser/>}/>
         </Routes>
 

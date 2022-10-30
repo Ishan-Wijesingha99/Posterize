@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from 'react-router-dom'
 
 
+// the creation of a user in the database has nothing to do with JWT authentication, only logging in and logging out
 
 export const CreateUser = () => {
   const [userCreated, setUserCreated] = useState(false)

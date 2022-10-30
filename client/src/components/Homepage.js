@@ -1,10 +1,31 @@
-import React from "react";
+import React, {useEffect} from "react";
+
+import { authenticateToken } from '../utils/AuthenticateToken'
+
+export const Homepage = ({loggedIn, setLoggedIn}) => {
+  
+  useEffect(() => {
+
+    const trueOrFalse = authenticateToken()
+
+    setLoggedIn(trueOrFalse)
+    
+  }, [])
 
 
-
-export const Homepage = () => {
   return (
     <div className="min-h-screen mb-16">
+
+      {loggedIn && (
+        <div id="loggedInHomepageDiv">
+          <h3 id="loggedInHomepage">
+            You are logged in
+          </h3>
+        </div>
+      )}
+
+
+
       <h2 className="text-3xl font-silkscreen font-extrabold text-center my-16">Browse Poster Categories!</h2>
 
       <div className="grid grid-rows-3 grid-cols-2 gap-24 justify-items-center align-middle">

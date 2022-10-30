@@ -38,10 +38,11 @@ router.post('/createuser', async (req, res) => {
 
 // LOGIN 
 router.post('/login', async (req, res) => {
+
   try {
     const user = await User.findOne({ email: req.body.email })
 
-    if(!user) return res.status(500).json({ error: 'Email does not exist in our database'})
+    if(!user) return res.status(500).json({ error: 'Email does not exist in our database' })
 
     const isPasswordCorrect = bcrypt.compareSync(req.body.password, user.password)
 
@@ -51,11 +52,13 @@ router.post('/login', async (req, res) => {
     const accessToken = jwt.sign({ id: user._id }, process.env.JWT_SECRET_KEY, { expiresIn: '2h' })
 
     res.status(200).json({ user, accessToken })
+    
   } catch (error) {
     console.log(error)
     res.status(500).json(error)
   }
 })
+
 
 
 module.exports = router

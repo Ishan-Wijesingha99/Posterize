@@ -1,8 +1,22 @@
-import React from "react";
+import React, {useEffect} from "react";
 import singlePoster from '../images/posters/art and nature/artandnature1.jpg'
 
+import { authenticateToken } from '../utils/AuthenticateToken'
 
-export const IndividualPoster = () => {
+
+
+export const IndividualPoster = ({loggedIn, setLoggedIn}) => {
+
+  useEffect(() => {
+
+    const trueOrFalse = authenticateToken()
+
+    setLoggedIn(trueOrFalse)
+    
+  }, [])
+
+  
+
   return (
     <div className="min-h-screen my-24">
       <div className="flex flex-row items-center justify-center">

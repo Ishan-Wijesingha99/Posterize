@@ -1,17 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import singlePoster from '../images/posters/art and nature/artandnature1.jpg'
 
+import { authenticateToken } from '../utils/AuthenticateToken'
 
 
-export const Cart = () => {
-  const [cartNumber, setCartNumber] = useState(2)
+export const Cart = ({loggedIn, setLoggedIn}) => {
+
+  useEffect(() => {
+
+    const trueOrFalse = authenticateToken()
+
+    setLoggedIn(trueOrFalse)
+    
+  }, [])
 
 
   return (
     <div className="min-h-screen my-24">
       <div className="flex flex-col items-center justify-center py-8 bg-gray-600 w-3/4 mx-auto border-2 border-black rounded-lg">
 
-        <p className="text-3xl my-4 text-gray-300 font-silkscreen w-3/4 text-center">Items in Cart: {cartNumber}</p>
+        <p className="text-3xl my-4 text-gray-300 font-silkscreen w-3/4 text-center">Items in Cart: </p>
 
         <div className="flex flex-row items-center justify-between w-5/6 p-8 bg-gray-300 border-2 border-black rounded-lg mt-8">
           <img

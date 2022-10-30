@@ -39,10 +39,6 @@ export const IndividualPoster = ({loggedIn, setLoggedIn}) => {
           <p className="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias nihil sunt explicabo modi enim similique accusantium iusto possimus deserunt adipisci.</p>
         </div>
       </div>
-
-      <div>
-
-      </div>
     </div>
   )
 }

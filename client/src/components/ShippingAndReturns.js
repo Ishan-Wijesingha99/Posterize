@@ -1,4 +1,5 @@
 import React, {useEffect} from "react";
+import { Link } from 'react-router-dom'
 
 
 
@@ -32,8 +33,52 @@ export const ShippingAndReturns = () => {
         <p className="text-2xl text-gray-300 w-3/4 text-justify font-silkscreen mb-4">The return address is:</p>
         <p className="text-xl text-gray-300 w-3/4 text-justify mb-12">32/11 Fake Avenue Richmond 3121 Victoria</p>
 
-
       </div>
+
+      <div className="flex flex-row items-center justify-center py-8 bg-gray-600 mx-4 border-2 border-black rounded-lg mt-32">
+        <Link 
+        to="/sport"
+        className="bg-green-600 px-4 py-3 rounded-lg hover:scale-105 duration-200 border-2 border-black text-black mx-4"
+        >
+          SPORT
+        </Link>
+
+        <Link 
+        to="/artandnature"
+        className="bg-green-600 px-4 py-3 rounded-lg hover:scale-105 duration-200 border-2 border-black text-black mx-4"
+        >
+          ART AND NATURE
+        </Link>
+
+        <Link
+        to="/motivational"
+        className="bg-green-600 px-4 py-3 rounded-lg hover:scale-105 duration-200 border-2 border-black text-black mx-4"
+        >
+          MOTIVATIONAL
+        </Link>
+
+        <Link
+        to="/movies"
+        className="bg-green-600 px-4 py-3 rounded-lg hover:scale-105 duration-200 border-2 border-black text-black mx-4"
+        >
+          MOVIES
+        </Link>
+
+        <Link
+        to="/anime"
+        className="bg-green-600 px-4 py-3 rounded-lg hover:scale-105 duration-200 border-2 border-black text-black mx-4"
+        >
+          ANIME
+        </Link>
+
+        <Link
+        to="/animals"
+        className="bg-green-600 px-4 py-3 rounded-lg hover:scale-105 duration-200 border-2 border-black text-black mx-4"
+        >
+          ANIMALS
+        </Link>
+      </div>
+      
     </div>
   )
 }

@@ -22,7 +22,6 @@ export const Navbar = ({loggedIn, setLoggedIn}) => {
 
   const clickUser = () => {
     setUserDropdown(prev => !prev)
-    console.log(userDropdown)
   }
 
   return (

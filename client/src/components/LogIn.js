@@ -31,8 +31,6 @@ export const LogIn = ({loggedIn, setLoggedIn}) => {
     })
   }
 
-  console.log(loginFormData)
-
   const handleFormSubmit = async event => {
     event.preventDefault()
 
@@ -51,10 +49,7 @@ export const LogIn = ({loggedIn, setLoggedIn}) => {
 
       const data = await response.json()
 
-      console.log(data)
-
       if(data.user) {
-        console.log(data.user)
         // this is where you change the state so that the entire webpage knows that the user is loggedIn
 
         // once this is successful, we save the JWT to localStorage, and then when we render each component for the first time, we check localStorage to see if a token exists, we then decode it using jwt-decode, and if the expiration date has passed, then we delete it from localStorage

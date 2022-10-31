@@ -7,7 +7,6 @@ import { Homepage } from "./Homepage";
 import { AboutUs } from "./AboutUs";
 import { Cart } from "./Cart";
 import { ContactUs } from "./ContactUs";
-import { IndividualPoster } from "./IndividualPoster";
 import { LogIn } from "./LogIn";
 import { ShippingAndReturns } from "./ShippingAndReturns";
 import { SavedPage } from "./SavedPage";
@@ -63,7 +62,6 @@ export const App = () => {
           <Route path="/contactus" element={<ContactUs />}/>
           <Route path="/saved" element={<SavedPage loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}/>
           <Route path="/shippingandreturns" element={<ShippingAndReturns />}/>
-          <Route path="/individualposter" element={<IndividualPoster loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}/>
           <Route path="/login" element={<LogIn loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}/>
           <Route path="/createuser" element={<CreateUser/>}/>
           

@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import { Link } from 'react-router-dom'
 
 import movies1 from '../images/posters/movies/movies1.jpg'
 import movies2 from '../images/posters/movies/movies2.jpg'
@@ -191,6 +192,43 @@ export const Movies = () => {
 
       )
       }
+
+      <div className="flex flex-row items-center justify-center py-8 bg-gray-600 mx-4 border-2 border-black rounded-lg mt-32">
+        <Link 
+        to="/sport"
+        className="bg-green-600 px-6 py-3 rounded-lg hover:scale-105 duration-200 border-2 border-black text-black mx-4"
+        >
+          SPORT
+        </Link>
+
+        <Link
+        to="/artandnature"
+        className="bg-green-600 px-6 py-3 rounded-lg hover:scale-105 duration-200 border-2 border-black text-black mx-4"
+        >
+          ART AND NATURE
+        </Link>
+
+        <Link
+        to="/motivational"
+        className="bg-green-600 px-6 py-3 rounded-lg hover:scale-105 duration-200 border-2 border-black text-black mx-4"
+        >
+          MOTIVATIONAL
+        </Link>
+
+        <Link
+        to="/anime"
+        className="bg-green-600 px-6 py-3 rounded-lg hover:scale-105 duration-200 border-2 border-black text-black mx-4"
+        >
+          ANIME
+        </Link>
+
+        <Link
+        to="/animals"
+        className="bg-green-600 px-6 py-3 rounded-lg hover:scale-105 duration-200 border-2 border-black text-black mx-4"
+        >
+          ANIMALS
+        </Link>
+      </div>
 
     </div>
   )

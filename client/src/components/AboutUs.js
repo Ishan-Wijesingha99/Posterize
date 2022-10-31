@@ -24,38 +24,38 @@ export const AboutUs = () => {
 
       </div>
 
-      <div className="flex flex-row items-center justify-center py-8 bg-gray-600 mx-4 border-2 border-black rounded-lg mt-32">
+      <div className="flex flex-col lg:flex-row items-center justify-center py-8 bg-gray-600 mx-4 border-2 border-black rounded-lg mt-32">
         <Link 
         to="/sport"
-        className="bg-green-600 px-4 py-3 rounded-lg hover:scale-105 duration-200 border-2 border-black text-black mx-4"
+        className="bg-green-600 px-4 py-3 rounded-lg hover:scale-105 duration-200 border-2 border-black text-black mx-4 my-4 lg:my-0"
         >
           SPORT
         </Link>
 
         <Link 
         to="/artandnature"
-        className="bg-green-600 px-4 py-3 rounded-lg hover:scale-105 duration-200 border-2 border-black text-black mx-4"
+        className="bg-green-600 px-4 py-3 rounded-lg hover:scale-105 duration-200 border-2 border-black text-black mx-4 my-4 lg:my-0"
         >
           ART AND NATURE
         </Link>
 
         <Link
         to="/motivational"
-        className="bg-green-600 px-4 py-3 rounded-lg hover:scale-105 duration-200 border-2 border-black text-black mx-4"
+        className="bg-green-600 px-4 py-3 rounded-lg hover:scale-105 duration-200 border-2 border-black text-black mx-4 my-4 lg:my-0"
         >
           MOTIVATIONAL
         </Link>
 
         <Link
         to="/movies"
-        className="bg-green-600 px-4 py-3 rounded-lg hover:scale-105 duration-200 border-2 border-black text-black mx-4"
+        className="bg-green-600 px-4 py-3 rounded-lg hover:scale-105 duration-200 border-2 border-black text-black mx-4 my-4 lg:my-0"
         >
           MOVIES
         </Link>
 
         <Link
         to="/anime"
-        className="bg-green-600 px-4 py-3 rounded-lg hover:scale-105 duration-200 border-2 border-black text-black mx-4"
+        className="bg-green-600 px-4 py-3 rounded-lg hover:scale-105 duration-200 border-2 border-black text-black mx-4 my-4 lg:my-0"
         >
           ANIME
         </Link>

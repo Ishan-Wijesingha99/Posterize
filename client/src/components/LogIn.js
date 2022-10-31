@@ -93,7 +93,7 @@ export const LogIn = ({loggedIn, setLoggedIn}) => {
       {loggedIn ? (
 
         <div className="flex flex-col items-center justify-center mx-auto min-h-screen">
-          <h2 className="text-4xl font-silkscreen font-extrabold text-center my-12">You are logged in</h2>
+          <h2 className="text-4xl font-silkscreen font-extrabold text-center my-12 mx-2">You are logged in</h2>
 
           <Link to="/" className="bg-green-600 px-6 py-3 mx-auto flex items-center rounded-lg hover:scale-105 duration-200 border-2 border-black text-xl my-12">
             Home Page
@@ -104,7 +104,7 @@ export const LogIn = ({loggedIn, setLoggedIn}) => {
 
         <div className="min-h-screen mt-32">
           <div className="flex flex-col justify-center items-center py-12 bg-gray-600 w-3/4 mx-auto border-2 border-black rounded-lg">
-            <p className="text-2xl mb-8 text-gray-300 font-silkscreen">Enter details to log in...</p>
+            <p className="text-2xl mb-8 text-gray-300 font-silkscreen text-center">Enter details to log in...</p>
 
             <form 
             className="flex flex-col w-3/5"

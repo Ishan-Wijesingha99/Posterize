@@ -179,14 +179,14 @@ export const Motivational = () => {
               Back to Search Results
           </button>
           
-          <div className="flex flex-row items-center justify-center mt-32">
+          <div className="flex flex-col md:flex-row items-center justify-center mt-32">
             <img
             src={posterElementObject.src}
             alt="single poster image"
-            className="w-[300px] mr-8 border-2 border-black shadow-lg shadow-gray-800"
+            className="w-[300px] md:mr-8 border-2 border-black shadow-lg shadow-gray-800 mb-8 md:mb-0"
             />
 
-            <div className="bg-gray-600 py-8 px-8 border-2 border-black rounded-lg text-gray-300 ml-8 max-w-[400px]">
+            <div className="bg-gray-600 py-8 px-8 border-2 border-black rounded-lg text-gray-300 md:ml-8 max-w-[400px]">
               <p className="text-2xl mb-6">$ {posterElementObject.price}</p>
               
               <button className="bg-green-600 px-6 py-3 mx-auto rounded-lg hover:scale-105 duration-200 border-2 border-black text-xl w-full text-center mb-6 text-black">Add to Cart</button>
@@ -198,10 +198,10 @@ export const Motivational = () => {
 
         <div>
           <div className="flex flex-col items-center justify-center h-[400px] bg-gray-600 border-b-2 border-black">
-            <h2 className="font-silkscreen font-extrabold text-6xl">MOTIVATIONAL</h2>
+            <h2 className="font-silkscreen font-extrabold text-3xl md:text-6xl text-center">MOTIVATIONAL</h2>
           </div>
 
-          <div className="grid grid-cols-3 gap-12 justify-items-center mx-8 my-16">
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 justify-items-center mx-8 my-16">
             {arrayOfJSX}
           </div>
         </div>
@@ -209,38 +209,38 @@ export const Motivational = () => {
       )
       }
 
-      <div className="flex flex-row items-center justify-center py-8 bg-gray-600 mx-4 border-2 border-black rounded-lg mt-32">
+      <div className="flex flex-col lg:flex-row items-center justify-center py-8 bg-gray-600 mx-4 border-2 border-black rounded-lg mt-32">
         <Link 
         to="/sport"
-        className="bg-green-600 px-6 py-3 rounded-lg hover:scale-105 duration-200 border-2 border-black text-black mx-4"
+        className="bg-green-600 px-6 py-3 rounded-lg hover:scale-105 duration-200 border-2 border-black text-black mx-4 my-4 lg:my-0"
         >
           SPORT
         </Link>
 
         <Link
         to="/artandnature"
-        className="bg-green-600 px-6 py-3 rounded-lg hover:scale-105 duration-200 border-2 border-black text-black mx-4"
+        className="bg-green-600 px-6 py-3 rounded-lg hover:scale-105 duration-200 border-2 border-black text-black mx-4 my-4 lg:my-0"
         >
           ART AND NATURE
         </Link>
 
         <Link
         to="/movies"
-        className="bg-green-600 px-6 py-3 rounded-lg hover:scale-105 duration-200 border-2 border-black text-black mx-4"
+        className="bg-green-600 px-6 py-3 rounded-lg hover:scale-105 duration-200 border-2 border-black text-black mx-4 my-4 lg:my-0"
         >
           MOVIES
         </Link>
 
         <Link
         to="/anime"
-        className="bg-green-600 px-6 py-3 rounded-lg hover:scale-105 duration-200 border-2 border-black text-black mx-4"
+        className="bg-green-600 px-6 py-3 rounded-lg hover:scale-105 duration-200 border-2 border-black text-black mx-4 my-4 lg:my-0"
         >
           ANIME
         </Link>
 
         <Link
         to="/animals"
-        className="bg-green-600 px-6 py-3 rounded-lg hover:scale-105 duration-200 border-2 border-black text-black mx-4"
+        className="bg-green-600 px-6 py-3 rounded-lg hover:scale-105 duration-200 border-2 border-black text-black mx-4 my-4 lg:my-0"
         >
           ANIMALS
         </Link>

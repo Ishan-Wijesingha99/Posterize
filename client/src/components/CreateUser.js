@@ -75,7 +75,7 @@ export const CreateUser = () => {
       ) : (
 
         <div className="flex flex-col justify-center items-center py-12 bg-gray-600 w-3/4 mx-auto border-2 border-black rounded-lg mb-16">
-          <p className="text-2xl mb-8 text-gray-300 font-silkscreen">Enter details to create a user...</p>
+          <p className="text-2xl mb-8 text-gray-300 font-silkscreen text-center">Enter details to create a user...</p>
 
           <form 
           className="flex flex-col w-3/5"

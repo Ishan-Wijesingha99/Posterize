@@ -15,7 +15,6 @@ export const Homepage = ({loggedIn, setLoggedIn}) => {
     
   }, [])
 
-
   return (
     <div className="min-h-screen mb-16">
 

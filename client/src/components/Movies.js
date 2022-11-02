@@ -112,8 +112,6 @@ const arrayOfImages = [
   }
 ]
 
-
-
 export const Movies = () => {
   const [singlePoster, setSinglePoster] = useState(false)
   const [posterElementObject, setPosterElementObject] = useState({

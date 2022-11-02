@@ -80,8 +80,6 @@ export const LogIn = ({loggedIn, setLoggedIn}) => {
 
   }
 
-
-
   return (
     <div>
 

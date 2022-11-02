@@ -16,8 +16,6 @@ export const Cart = ({loggedIn, setLoggedIn}) => {
     
   }, [])
 
-
-
   return (
     <div className="min-h-screen my-24">
 

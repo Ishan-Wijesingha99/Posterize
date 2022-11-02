@@ -156,8 +156,6 @@ export const Anime = () => {
     )
   })
 
-
-
   return (
     <div className="min-h-screen mb-24">
       

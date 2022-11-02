@@ -58,7 +58,6 @@ export const CreateUser = () => {
     window.scrollTo(0, 0)
   }, [])
 
-
   return (
     <div className="min-h-screen mt-32">
 

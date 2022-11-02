@@ -48,8 +48,6 @@ const client = new ApolloClient({
 export const App = () => {
   const [loggedIn, setLoggedIn] = useState(false)
   
-
-
   return (
     <ApolloProvider client={client}>
       <div>
